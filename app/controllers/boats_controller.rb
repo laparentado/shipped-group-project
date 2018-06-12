@@ -18,7 +18,7 @@ end
 
 
   def show
-    @boats=Boat.all
+    @boat=Boat.find(params[:id])
   end
 
   def edit
