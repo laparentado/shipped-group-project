@@ -3,8 +3,12 @@ class BoatsController < ApplicationController
   end
 
   def new
+    if !current_user
+      redirect_to "/"
+    else
     @boat=Boat.new
   end
+end
 
   def create
     boat=Boat.new(boat_params)
