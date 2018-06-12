@@ -1,0 +1,14 @@
+class SchedulesController < ApplicationController
+  def index
+    @boats=Boat.all
+  end
+
+  def new
+  end
+
+  def show
+  end
+
+  def edit
+  end
+end
