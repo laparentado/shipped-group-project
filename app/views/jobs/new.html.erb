@@ -5,6 +5,7 @@ Origin: <%= f.text_field :origin %><br>
 Destination: <%= f.text_field :destination %><br>
 Cost: <%= f.text_field :cost %><br>
 Size :<%= f.text_field :size %><br>
-BOAT AND USER INFO WILL BE HERE<br>
+<%= f.select :boat_id, options_from_collection_for_select(@boats, "id", "name") %><br>
+USER INFO WILL BE HERE<br>
 <%= f.submit "create job" %>
 <% end %>

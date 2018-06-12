@@ -1,0 +1,10 @@
+<h2>Job <%= @job.id %></h2>
+Desctription:<%= @job.description %><br>
+Origin: <%= @job.origin %><Br>
+Destination: <%= @job.destination %><br>
+Cost: $<%= @job.cost %><br>
+Size: <%= @job.size %><br>
+
+<%= link_to "edit job", edit_job_path %> •
+<%= link_to "delete job", job_path, method: :delete,
+data: {confirm: "are you sure? you cannot undo this action."} %>
