@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
-  get 'schedules/index'
-  get 'schedules/new'
-  get 'schedules/show'
-  get 'schedules/edit'
   devise_for :users
-  root "schedule#index"
+  root "schedules#index"
   resources :boats
   resources :jobs
   resources :schedule
