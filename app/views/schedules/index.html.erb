@@ -2,6 +2,6 @@
 <p>Find me in app/views/schedules/index.html.erb</p>
 
 <%@boats.each do |b|%>
-<%=b.name%>
+<a href="/boats/<%=b.id%>"><%=b.name%></a>
 
 <%end%>

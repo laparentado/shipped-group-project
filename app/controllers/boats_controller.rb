@@ -18,6 +18,7 @@ end
 
 
   def show
+    @boats=Boat.all
   end
 
   def edit

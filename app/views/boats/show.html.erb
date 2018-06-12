@@ -1,2 +1,7 @@
-<h1>Boats#show</h1>
-<p>Find me in app/views/boats/show.html.erb</p>
+<%@boats.each do |b|%>
+<h1><%=b.name%></h1>
+<p>Find me in app/views/schedules/show.html.erb</p>
+<a href="/boats/<%=b.id%>"><%=b.name%></a>
+<li>Load: <%=b.max_load%></li>
+<li>Location: <%=b.location%></li>
+<%end%>
