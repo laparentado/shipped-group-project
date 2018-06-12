@@ -1,0 +1,10 @@
+<h2>Create Job</h2>
+<%= form_for @job do |f| %>
+Description: <%= f.text_field :description %><br>
+Origin: <%= f.text_field :origin %><br>
+Destination: <%= f.text_field :destination %><br>
+Cost: <%= f.text_field :cost %><br>
+Size :<%= f.text_field :size %><br>
+BOAT AND USER INFO WILL BE HERE<br>
+<%= f.submit "create job" %>
+<% end %>
