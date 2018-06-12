@@ -39,6 +39,12 @@ end
       end
     end
 
+  def destroy
+    @boat = Boat.find(params[:id])
+    @boat.destroy
+    redirect_to "/"
+  end
+
 private
 
   def boat_params
