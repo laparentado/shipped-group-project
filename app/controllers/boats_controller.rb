@@ -18,11 +18,22 @@ end
 
 
   def show
-    @boat=Boat.find(params[:id])
+    @boat = Boat.find(params[:id])
   end
 
   def edit
+    @boat = Boat.find(params[:id])
+    
   end
+
+    def update
+      @boat = Boat.find(params[:id])
+      if @boat.update(boat_params)
+        redirect_to '/'
+      else
+        render edit_boat_boat
+      end
+    end
 
 private
 
