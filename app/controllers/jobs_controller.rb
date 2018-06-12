@@ -5,6 +5,7 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
+    @boats = Boat.all
   end
 
   def create
@@ -22,6 +23,8 @@ class JobsController < ApplicationController
 
   def edit
     @job = Job.find(params[:id])
+    @boats = Boat.all
+
   end
 
   def update
