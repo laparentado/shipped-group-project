@@ -1,2 +1,9 @@
-<h1>Boats#edit</h1>
-<p>Find me in app/views/boats/edit.html.erb</p>
+<h1>Update Boat Description</h1>
+
+<h3><%=@boat.name%></h3>
+<%= form_for @boat do |u| %>
+	Name: <%= u.text_field :name %><br />
+	Load: <%= u.text_field :max_load %><br />
+	Location: <%= u.text_field :location %><br />
+	<%= u.submit %>
+<% end %>
