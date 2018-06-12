@@ -10,13 +10,17 @@
   </head>
 
   <body>
+<nav>
+  <%=link_to "home", root_path %> •
+  <%= link_to "sign in", new_user_session_path %> •
+  <%= link_to "create boat", new_boat_path %> •
+  <%= link_to "boat list", boats_path %> •
+  <%= link_to "create job", new_job_path %> •
+  <%= link_to "jobs list", jobs_path %>
+</nav>
 
 
 
-
-
-
-    
     <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
     <%= yield %>

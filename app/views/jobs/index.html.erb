@@ -1,0 +1,8 @@
+<% @jobs.each_with_index do |j, index| %>
+<h2>Job <%= index+1 %></h2>
+Desctription:<%= j.description %><br>
+Origin: <%= j.origin %><Br>
+Destination: <%= j.destination %><br>
+Cost: $<%= j.cost %><br>
+Size: <%= j.size %><hr>
+<% end %>
