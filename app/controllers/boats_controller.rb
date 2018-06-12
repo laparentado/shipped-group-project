@@ -40,9 +40,10 @@ end
     end
 
   def destroy
-    @boat = Blog.find(params[:id])
+    @boat = Boat.find(params[:id])
     @boat.destroy
     redirect_to "/"
+  end
 
 private
 
