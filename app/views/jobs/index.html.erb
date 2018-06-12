@@ -1,6 +1,6 @@
 <% @jobs.each_with_index do |j, index| %>
-<h2>Job <%= index+1 %></h2>
-Desctription:<%= j.description %><br>
+<h2><a href="/jobs/<%=j.id%>">Job <%= index+1 %></h2></a>
+Description:<%= j.description %><br>
 Origin: <%= j.origin %><Br>
 Destination: <%= j.destination %><br>
 Cost: $<%= j.cost %><br>
