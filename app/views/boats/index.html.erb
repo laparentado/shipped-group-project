@@ -1,7 +1,13 @@
 <h1>List of Available Boats</h1>
 
-<%@boats.each_with_index do |b, index|%><br />
+<% @boats.each_with_index do |b, index|%><br />
 
-<%= index + 1 %>. <a href="/boats/<%=b.id%>"><%=b.name%></a>
+<%= index + 1 %>. <a href="/boats/<%=b.id%>"><%=b.name%></a><br /><br />
+
+
+<%= image_tag b.image.url(:thumb) %>
+
+		
+
 <hr>
 <%end%>

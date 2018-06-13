@@ -2,7 +2,14 @@
 <h1><%=@boat.name%></h1>
 <p>Find me in app/views/schedules/show.html.erb</p>
 
+<p>
+	<strong>Image:</strong>
+	<%=image_tag @boat.image.url(:thumb) %>
+</p>
+
 <li>Load: <%=@boat.max_load%></li>
 <li>Location: <%=@boat.location%></li>
 <a href="/boats/<%=@boat.id%>/edit">Edit</a>
 <%= link_to "Delete Boat", boat_path, method: :delete %>
+
+

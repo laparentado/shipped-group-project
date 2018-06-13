@@ -1,10 +1,24 @@
 <h1>Boats#new</h1>
 <p>Find me in app/views/boats/new.html.erb</p>
 
-<%=form_for @boat do |f|%>
-Name: <%=f.text_field :name%>
-Load: <%=f.text_field :max_load%>
-Current Location: <%=f.text_field :location%>
-<%= f.submit%>
 
+<%=form_for @boat do |f|%>
+<%if @boat.errors.any?%>
+<h2>Errors:</h2>
+<%@boat.errors.full_messages.each do |message|%>
+<li><%=message%></li></br>
+<%end%>
+<%end%>
+
+Name: <%=f.text_field :name%><br>
+Load: <%=f.text_field :max_load%><br>
+Current Location: <%=f.text_field :location%>
+<%= f.file_field :image %>
+	<% if f.object.image? %>
+		<%= image_tag f.object.image.url(:thumb) %>
+		<%= f.label :remove_image %>
+		<%= f.check_box :remove_image %>
+	<%end%>
+<%= f.submit%>
+	
 <%end%>

@@ -9,11 +9,13 @@ class JobsController < ApplicationController
   end
 
   def create
-    job = Job.new(job_params)
-    job.user_id = current_user.id
-    if job.save
+    @job = Job.new(job_params)
+    @job.user_id = current_user.id
+    if @job.save
+      flash[:success] = "New job created!"
       redirect_to "/jobs"
     else
+      @boats=Boat.all
       render "/jobs/new"
     end
   end
