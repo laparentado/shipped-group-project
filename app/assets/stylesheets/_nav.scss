@@ -1,0 +1,31 @@
+nav{
+  text-transform: uppercase;
+  font-family: Lato;
+  background-color: #44ABC4;
+  text-align: center;
+  letter-spacing: 2px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+nav a:link{
+  text-decoration: none;
+  color: #E3EAED;
+}
+
+nav a:visited{
+  color: #E3EAED;
+}
+
+nav a:hover{
+  text-decoration: underline;
+}
+
+h1, h2, h3{
+  font-family: Lobster;
+}
+
+body{
+  font-family: Lato;
+  background-color: #11141C;
+}
