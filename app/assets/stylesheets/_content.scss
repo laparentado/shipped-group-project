@@ -3,4 +3,32 @@
   height: 500px;
   border-radius: 12px;
   margin-left: 10px;
+  text-align: center;
+  overflow: auto;
+}
+
+body{
+  font-family: Lato;
+  background-color: #11141C;
+}
+
+h1, h2, h3{
+  font-family: Lobster;
+}
+
+.currentuser{
+  color: #E3EAED;
+}
+
+a:link{
+  text-decoration: none;
+  color: #44ABC4;
+}
+
+a:visited{
+  color: #44ABC4;
+}
+
+a:hover{
+  text-decoration: underline;
 }
