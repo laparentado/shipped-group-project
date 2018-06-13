@@ -1,0 +1,10 @@
+<h2>User Profile</h2>
+
+<a href="/users/edit">Edit user profile</a>
+
+<%@user.boats.each do |u|%>
+<h3><%=u.name%></h3>
+<%=image_tag u.image.url(:thumb)%>
+<li>Load: <%=u.max_load%></li>
+<li>Location: <%=u.location%></li>
+<%end%>
