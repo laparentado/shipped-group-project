@@ -3,13 +3,15 @@
 <p>Find me in app/views/schedules/show.html.erb</p>
 
 <p>
+<%# @boat.image.each do |f| %>
 	<strong>Image:</strong>
-	<%=image_tag @boat.image.url(:thumb) %>
+	<%= image_tag @boat.image.url(:thumb) %>
+ <%# end %>
 </p>
 
 <li>Load: <%=@boat.max_load%></li>
 <li>Location: <%=@boat.location%></li>
-<a href="/boats/<%=@boat.id%>/edit">Edit</a>
+<a href="/boats/<%=@boat.id%>/edit">Edit</a> |
 <%= link_to "Delete Boat", boat_path, method: :delete %>
 
 
