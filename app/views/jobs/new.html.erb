@@ -1,10 +1,18 @@
 <h2>Create Job</h2>
 <%= form_for @job do |f| %>
+<%if @job.errors.any?%>
+<h2>Errors:</h2>
+<%@job.errors.full_messages.each do |message|%>
+<li><%=message%></li></br>
+<%end%>
+<%end%>
+
 Description: <%= f.text_field :description %><br>
 Origin: <%= f.text_field :origin %><br>
 Destination: <%= f.text_field :destination %><br>
 Cost: <%= f.text_field :cost %><br>
 Size :<%= f.text_field :size %><br>
+
 <%= f.select :boat_id, options_from_collection_for_select(@boats, "id", "name") %><br>
 <%= f.submit "create job" %>
 <% end %>

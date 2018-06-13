@@ -1,5 +1,6 @@
 class BoatsController < ApplicationController
   def index
+    @boats=Boat.all
   end
 
   def new
@@ -11,9 +12,10 @@ class BoatsController < ApplicationController
 end
 
   def create
-    boat=Boat.new(boat_params)
-    boat.user_id=current_user.id
-    if boat.save
+    @boat=Boat.new(boat_params)
+    @boat.user_id=current_user.id
+    if @boat.save
+      flash[:success] = "New boat created!"
       redirect_to "/"
     else
       render "/boats/new"
@@ -23,7 +25,7 @@ end
 
   def show
     @boat = Boat.find(params[:id])
-    
+
   end
 
   def edit

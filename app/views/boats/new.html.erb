@@ -1,9 +1,17 @@
 <h1>Boats#new</h1>
 <p>Find me in app/views/boats/new.html.erb</p>
 
+
 <%=form_for @boat do |f|%>
-Name: <%=f.text_field :name%>
-Load: <%=f.text_field :max_load%>
+<%if @boat.errors.any?%>
+<h2>Errors:</h2>
+<%@boat.errors.full_messages.each do |message|%>
+<li><%=message%></li></br>
+<%end%>
+<%end%>
+
+Name: <%=f.text_field :name%><br>
+Load: <%=f.text_field :max_load%><br>
 Current Location: <%=f.text_field :location%>
 <%= f.submit%>
 
