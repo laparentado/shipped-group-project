@@ -4,7 +4,7 @@
 
 <p>
 	<strong>Image:</strong>
-	<%=image_tag @boat.image.thumb.url %>
+	<%=image_tag @boat.image.url(:thumb) %>
 </p>
 
 <li>Load: <%=@boat.max_load%></li>
