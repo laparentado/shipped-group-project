@@ -4,6 +4,8 @@
 <%= form_for @boat do |u| %>
 	Name: <%= u.text_field :name %><br />
 	Load: <%= u.text_field :max_load %><br />
-	Location: <%= u.text_field :location %><br />
+	Location: <%= u.text_field :location %><br /><br />
+	<%=image_tag @boat.image.url(:thumb) %><br />
+	<%= u.file_field :image %>
 	<%= u.submit %>
 <% end %>

@@ -13,6 +13,12 @@
 Name: <%=f.text_field :name%><br>
 Load: <%=f.text_field :max_load%><br>
 Current Location: <%=f.text_field :location%>
+<%= f.file_field :image %>
+	<% if f.object.image? %>
+		<%= image_tag f.object.image.url(:thumb) %>
+		<%= f.label :remove_image %>
+		<%= f.check_box :remove_image %>
+	<%end%>
 <%= f.submit%>
-
+	
 <%end%>

@@ -1,6 +1,7 @@
 class BoatsController < ApplicationController
   def index
-    @boats=Boat.all
+
+    @boats = Boat.all
   end
 
   def new
@@ -16,6 +17,7 @@ end
     @boat.user_id=current_user.id
     if @boat.save
       flash[:success] = "New boat created!"
+
       redirect_to "/"
     else
       render "/boats/new"
@@ -51,7 +53,7 @@ end
 private
 
   def boat_params
-    params.require(:boat).permit(:name, :max_load, :location, :user_id)
+    params.require(:boat).permit(:name, :max_load, :location, :user_id, :image, :remove_image)
 
 end
 end
