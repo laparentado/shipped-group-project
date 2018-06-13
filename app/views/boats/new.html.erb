@@ -1,6 +1,4 @@
-<h1>Boats#new</h1>
-<p>Find me in app/views/boats/new.html.erb</p>
-
+<h2>Create Boat</h2>
 
 <%=form_for @boat do |f|%>
 	<%if @boat.errors.any?%>
@@ -14,9 +12,11 @@ Name: <%=f.text_field :name%><br>
 Load: <%=f.text_field :max_load%><br>
 Current Location: <%=f.text_field :location%>
 <%= f.file_field :image %>
+
 	
 	
 	
 <%= f.submit%>
 
 <% end %>
+
