@@ -4,7 +4,11 @@ Origin: <%= @job.origin %><Br>
 Destination: <%= @job.destination %><br>
 Cost: $<%= @job.cost %><br>
 Size: <%= @job.size %><br>
-
+<% if @job.boat_id == nil %>
+<% else %>
+Boat: <%= Boat.find(@job.boat_id).name %><br>
+<% end %>
+<hr>
 <%= link_to "edit job", edit_job_path %> •
 <%= link_to "delete job", job_path, method: :delete,
 data: {confirm: "are you sure? you cannot undo this action."} %>
