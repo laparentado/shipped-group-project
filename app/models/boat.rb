@@ -1,5 +1,4 @@
 class Boat < ApplicationRecord
-  has_many :users, :through => :schedules
-  has_many :jobs, :through => :schedules
-  has_many :schedules
+has_many :users, :through => :jobs
+  has_many :jobs
 end

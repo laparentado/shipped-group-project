@@ -23,11 +23,12 @@ end
 
   def show
     @boat = Boat.find(params[:id])
+    
   end
 
   def edit
     @boat = Boat.find(params[:id])
-    
+
   end
 
     def update
