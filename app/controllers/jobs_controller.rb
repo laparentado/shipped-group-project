@@ -2,6 +2,10 @@ class JobsController < ApplicationController
   def index
     @jobs = Job.all
   end
+def home
+  @schedules = Schedule.all
+
+end
 
   def new
     @job = Job.new
@@ -22,11 +26,11 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+    @boats = Boat.all
   end
 
   def edit
     @job = Job.find(params[:id])
-    @boats = Boat.all
 
   end
 
@@ -48,6 +52,6 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:description, :origin, :destination, :cost, :size, :user_id, :boat_id)
+    params.require(:job).permit(:description, :origin, :destination, :cost, :size, :user_id)
   end
 end

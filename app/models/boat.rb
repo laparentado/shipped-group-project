@@ -1,7 +1,8 @@
 class Boat < ApplicationRecord
+belongs_to :schedule
+belongs_to :user
+has_many :jobs
 
-has_many :users, :through => :jobs
-  has_many :jobs
 
 
 has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
@@ -9,7 +10,7 @@ has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, def
 
 
 
-  
+
 
 
 
