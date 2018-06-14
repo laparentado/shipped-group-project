@@ -13,10 +13,15 @@ class BoatsController < ApplicationController
 end
 
   def create
-    @boat=Boat.new(boat_params)
+    @boat = Boat.new(boat_params)
     @boat.user_id=current_user.id
     if @boat.save
       flash[:success] = "New boat created!"
+    #   if(params[:image])
+    #     params[:image].each do |f|
+    #     @boat.image = (image: f)
+    #   end
+    # end
 
       redirect_to "/"
     else
