@@ -5,12 +5,14 @@ class SchedulesController < ApplicationController
 
   def assign
     s = Schedule.new(schedule_params)
+    s.job_id = params[:job_id]
     s.user_id = current_user.id
-    s.boat_id = params[:id]
     if s.save
+
       redirect_to "/"
     else
-      render "/jobs/new"
+
+      redirect_to "/jobs"
     end
   end
 
@@ -25,6 +27,6 @@ class SchedulesController < ApplicationController
 
   private
   def schedule_params
-    params.require(:schedule).permit(:user_id, :boat_id, :job_id)
+    params.require(:schedule).permit(:slot, :user_id, :boat_id, :job_id)
   end
 end

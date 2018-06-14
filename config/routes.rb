@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :boats
   resources :jobs
 
-
+  post "assign" => "schedules#assign"
 end

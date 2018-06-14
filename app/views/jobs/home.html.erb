@@ -1,2 +1,7 @@
 <h1>Welcome to Our Shipping Page</h1>
 <div id="homepage"></div>
+<% @schedules.each do |s| %>
+Time Slot:<%= s.slot %><br>
+Job Id:<%= s.job_id %><br>
+Boat Id:<%= Boat.find(s.boat_id).name %><br><hr>
+<% end %>
