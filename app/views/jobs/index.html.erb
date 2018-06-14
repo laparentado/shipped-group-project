@@ -5,9 +5,6 @@ Origin: <%= j.origin %><Br>
 Destination: <%= j.destination %><br>
 Cost: $<%= j.cost %><br>
 Size: <%= j.size %><br>
-<% if j.boat_id == nil %>
-<% else %>
-Boat: <%= Boat.find(j.boat_id).name %>
+
 <% end %>
 <hr>
-<% end %>

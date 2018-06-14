@@ -4,11 +4,16 @@ Origin: <%= @job.origin %><Br>
 Destination: <%= @job.destination %><br>
 Cost: $<%= @job.cost %><br>
 Size: <%= @job.size %><br>
-<% if @job.boat_id == nil %>
-<% else %>
-Boat: <%= Boat.find(@job.boat_id).name %><br>
-<% end %>
+
+
 <hr>
 <%= link_to "edit job", edit_job_path %> •
 <%= link_to "delete job", job_path, method: :delete,
 data: {confirm: "are you sure? you cannot undo this action."} %>
+
+<%= form_for :schedule, url:{action: 'assign', controller: 'schedules'} do |f| %>
+<%= f.datetime_field :slot %>
+<%= f.select :boat_id, options_from_collection_for_select(@boats, "id", "name") %>
+<%= hidden_field_tag "job_id", @job.id %>
+<%= f.submit "schedule job" %>
+<% end %>

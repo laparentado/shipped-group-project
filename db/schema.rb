@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_13_164800) do
+ActiveRecord::Schema.define(version: 2018_06_14_192332) do
 
   create_table "boats", force: :cascade do |t|
     t.string "name"
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 2018_06_13_164800) do
     t.integer "cost"
     t.integer "size"
     t.integer "user_id"
-    t.integer "boat_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -44,6 +43,7 @@ ActiveRecord::Schema.define(version: 2018_06_13_164800) do
     t.integer "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "slot"
   end
 
   create_table "users", force: :cascade do |t|
