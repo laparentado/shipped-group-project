@@ -1,5 +1,5 @@
 class Boat < ApplicationRecord
-belongs_to :schedule
+belongs_to :schedule through :jobs
 belongs_to :user
 has_many :jobs
 
